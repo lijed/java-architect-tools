@@ -3,27 +3,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.me.learn</groupId>
+    <version>1.0-SNAPSHOT</version>
+    <artifactId>java-architect-tools</artifactId>
+  </parent>
 
-  <groupId>com.me.learn</groupId>
-  <artifactId>java-architect-tools</artifactId>
+
+  <artifactId>event-handler-tools</artifactId>
   <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
 
-  <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.6.2</version>
-    <relativePath/> <!-- lookup parent from repository -->
-  </parent>
-
   <modules>
-    <module>concurrent-tools</module>
-    <module>long-pooling-tools</module>
-    <module>event-handler-tools</module>
-    <module>common-tools</module>
+    <module>nacos-event-handler-tools</module>
   </modules>
 
-  <name>java-architect-tools</name>
+  <name>event-handler-tools</name>
   <url>http://www.example.com</url>
 
   <properties>
@@ -33,14 +28,6 @@
   </properties>
 
   <dependencies>
-    
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.22</version>
-      <scope>provided</scope>
-    </dependency>
-
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
