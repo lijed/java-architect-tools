@@ -25,7 +25,7 @@ import java.util.concurrent.*;
 /**
  * Description:
  *
- * @Author: Administrator
+ * @Author: Jed Li
  * Created: 2021/12/25
  **/
 
@@ -187,6 +187,7 @@ public class LongPollingService {
                 response.setStatus(HttpServletResponse.SC_OK);
                 response.getWriter().println(JacksonUtils.toJson(user));
                 asyncContext.complete();
+
             } catch (Exception ex) {
                 logger.error(ex.toString(), ex);
                 asyncContext.complete();

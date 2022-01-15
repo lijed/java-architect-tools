@@ -21,6 +21,7 @@
     <module>long-pooling-tools</module>
     <module>event-handler-tools</module>
     <module>common-tools</module>
+      <module>expiration-queue</module>
   </modules>
 
   <name>java-architect-tools</name>

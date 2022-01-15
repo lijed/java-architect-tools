@@ -16,6 +16,7 @@
 
   <modules>
     <module>nacos-event-handler-tools</module>
+    <module>general-event-tools</module>
   </modules>
 
   <name>event-handler-tools</name>

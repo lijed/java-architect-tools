@@ -23,7 +23,7 @@ import static com.me.learn.notify.NotifyCenter.ringBufferSize;
 /**
  * Description:
  *
- * @Author: Administrator
+ * @Author: Jed Li
  * Created: 2021/12/24
  **/
 public class DefaultPublisher extends Thread implements EventPublisher {
@@ -68,6 +68,7 @@ public class DefaultPublisher extends Thread implements EventPublisher {
             super.start();
             if (queueMaxSize == -1) {
                 queueMaxSize = ringBufferSize;
+                this.queue = new ArrayBlockingQueue<>(queueMaxSize);
             }
             initialized = true;
         }
@@ -94,6 +95,7 @@ public class DefaultPublisher extends Thread implements EventPublisher {
         checkIfStart();
         boolean success = queue.offer(event);
 
+        //如果时间添加到队列失败，则马上执行
         if (!success) {
             LOGGER.warn("Unable to plug in due to interruption, synchronize sending time, event : {}", event);
             receiveEvent(event);
